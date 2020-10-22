@@ -1,0 +1,18 @@
+.social-media-wrapper {
+  display: block;
+  .social-media-links-header {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+  }
+  .social-media-links-wrapper {
+    display: flex;
+    flex-direction: row;
+    .handler-wrapper {
+      margin: 5px;
+      padding: 5px;
+      a {
+        color: beige;
+      }
+    }
+  }
+}
