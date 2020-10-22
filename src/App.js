@@ -14,6 +14,7 @@ function App() {
           Coming Soon!
         </h2>
         <SocialMedia />
+        <img src="https://visitor-badge.glitch.me/badge?page_id=dtan13.dtan13.github.io" alt="Visitor Counter" />
       </header>
     </div>
   );
