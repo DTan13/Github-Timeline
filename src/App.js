@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import SocialMedia from './components/socialMedia';
 
 import './App.css';
-import './styles/social.scss'
+import './Styles';
 
 function App() {
   return (
