@@ -54,6 +54,14 @@
     justify-content: space-between;
     margin: 0 auto;
     border-top: 2px solid $theme-color-sec;
+    .footer-code {
+      padding-top: 10px;
+      padding-left: 20px;
+      font-size: 14px;
+    }
+    .footer-visitor-count {
+      padding-top: 8px;
+    }
   }
 }
 
