@@ -1,5 +1,5 @@
 import React from "react";
-import { FaDiscord, FaGithub, FaGitlab, FaInstagram, FaLinkedin, FaRedditAlien, FaStackOverflow, FaTelegram, FaTwitter, } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaGitlab, FaInstagram, FaLinkedin, FaStackOverflow, FaTelegram, FaTwitter, } from "react-icons/fa";
 
 const LinkHandler = props => {
     const getComponent = type => {
