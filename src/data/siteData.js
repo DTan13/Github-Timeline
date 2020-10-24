@@ -8,7 +8,7 @@ export const socialMediaLinks = [
 ];
 
 export const siteData = {
-    name: "DTan[13]",
+    name: "(Dhananjay Tanpure)",
     githubUsername: "DTan13",
     ProjectLinks: [
         { Front: "https://github.com/DTan13/DTan13.github.io.git" },
