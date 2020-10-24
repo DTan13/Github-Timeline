@@ -33,3 +33,52 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .layout-wrapper {
+    .header-wrapper {
+      padding: 2%;
+      .header-name {
+        font-size: 20px;
+      }
+      .header-pages {
+        .header-page-single {
+          font-size: 24px;
+          margin-left: 20px;
+          .header-page-single-text {
+            font-size: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .layout-wrapper {
+    width: 100%;
+    .header-wrapper {
+      .header-name {
+        font-size: 22px;
+      }
+      .header-pages {
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .layout-wrapper {
+    width: 80%;
+  }
+}
+@media (max-width: 900px) {
+  .layout-wrapper {
+    .header-wrapper {
+      .header-pages {
+        margin-top: 4px;
+      }
+    }
+  }
+}
