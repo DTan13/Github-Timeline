@@ -7,7 +7,7 @@ import { socialMediaLinks } from '../../data/siteData';
 const pages = [
     { link: '/', title: "Home" },
     { link: '/timeline', title: "TimeLine" },
-    { link: '/projects', title: "Contributions" },
+    { link: '/projects', title: "Projects" },
     { link: '/about', title: "About" },
 ];
 

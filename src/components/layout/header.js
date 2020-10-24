@@ -22,7 +22,7 @@ const Header = props => {
     return (
         <div className="header-wrapper">
             <div className="header-name">
-                <h2 title={siteData.name}>{siteData.name}</h2>
+                <h3 title={siteData.name}>{siteData.githubUsername}<span className='header-name-full'>{siteData.name}</span></h3>
             </div>
             <div className="header-pages">
                 {props.pages.map((page, index) => {
