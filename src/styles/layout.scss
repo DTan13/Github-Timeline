@@ -1,4 +1,35 @@
 @import "common";
 
 .layout-wrapper {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 1%;
+
+  .header-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .header-name {
+      font-family: cursive;
+      font-size: 28px;
+    }
+    .header-pages {
+      .header-page-single {
+        font-size: 18px;
+        margin-left: 10px;
+        vertical-align: bottom;
+        padding: 8px;
+        border-radius: 8px;
+        transition: all linear 1s;
+
+        &:hover {
+          background-color: purple;
+        }
+      }
+      .header-page-single-active {
+        background-color: $theme-color-sec;
+      }
+    }
+  }
 }
