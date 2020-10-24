@@ -42,6 +42,19 @@
       }
     }
   }
+  .footer-wrapper {
+    background-color: $theme-color-primary;
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-top: 2px solid $theme-color-sec;
+  }
 }
 
 @media (max-width: 650px) {
