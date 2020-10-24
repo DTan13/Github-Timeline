@@ -8,4 +8,13 @@ export const socialMediaLinks = [
     { Discord: "https://discord.gg/befXQxu" },
     { Linkedin: "https://linkedin.com/in/dtan13/" },
     { Twitter: "https://twitter.com/_DTan13_" }
-]
+];
+
+export const siteData = {
+    name: "DTan[13]",
+    githubUsername: "DTan13",
+    ProjectLinks: [
+        { Front: "https://github.com/DTan13/DTan13.github.io.git" },
+        { Back: "https://github.com/DTan13/DTan13.github.io.api.git" }
+    ]
+};
