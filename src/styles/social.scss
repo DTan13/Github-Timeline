@@ -1,3 +1,5 @@
+@import "common";
+
 .social-media-wrapper {
   display: block;
   .social-media-links-header {
@@ -13,7 +15,7 @@
       margin: 5px;
       padding: 5px;
       a {
-        color: beige;
+        color: $theme-color-sec;
       }
     }
   }
