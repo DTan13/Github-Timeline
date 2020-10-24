@@ -1,5 +1,9 @@
 import React from 'react';
 import Header from './header';
+import Footer from './footer';
+
+import { socialMediaLinks } from '../../data/siteData';
+
 const pages = [
     { link: '/', title: "Home" },
     { link: '/timeline', title: "TimeLine" },
@@ -12,6 +16,7 @@ const Layout = props => {
         <div className="layout-wrapper">
             <Header pages={pages} />
             {props.children}
+            <Footer socialMediaLinks={socialMediaLinks} />
         </div>
     );
 };
