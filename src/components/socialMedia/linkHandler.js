@@ -3,30 +3,28 @@ import { FaDiscord, FaGithub, FaGitlab, FaInstagram, FaLinkedin, FaStackOverflow
 
 const LinkHandler = props => {
     const getComponent = type => {
-        console.log(type);
+        const size = props.layout ? '24px' : '50px';
         switch (type) {
             case "Instagram":
-                return <FaInstagram size='50px' />
+                return <FaInstagram size={size} />;
             case "Telegram":
-                return <FaTelegram size='50px' />
+                return <FaTelegram size={size} />;
             case "Gitlab":
-                return <FaGitlab size='50px' />
+                return <FaGitlab size={size} />;
             case "Github":
-                return <FaGithub size='50px' />
-            case "Reddit":
-                return <FaRedditAlien size='50px' />
+                return <FaGithub size={size} />;
             case "Stackoverflow":
-                return <FaStackOverflow size='50px' />
+                return <FaStackOverflow size={size} />;
             case "Discord":
-                return <FaDiscord size='50px' />
+                return <FaDiscord size={size} />;
             case "Linkedin":
-                return <FaLinkedin size='50px' />
+                return <FaLinkedin size={size} />;
             case "Twitter":
-                return <FaTwitter size='50px' />
+                return <FaTwitter size={size} />;
             default:
                 return;
         }
-    }
+    };
 
     return (
         <div className="handler-wrapper">
@@ -34,7 +32,7 @@ const LinkHandler = props => {
                 {getComponent(props.type)}
             </a>
         </div>
-    )
-}
+    );
+};
 
 export default LinkHandler;
