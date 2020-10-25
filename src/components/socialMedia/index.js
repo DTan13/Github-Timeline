@@ -16,7 +16,7 @@ const SocialMedia = props => {
             }
             <div className="social-media-links-wrapper">
                 {socialMediaLinks.map(link => {
-                    return <LinkHandler layout={props.layout} type={`${Object.keys(link)[0]}`} handlerLink={link[`${Object.keys(link)}`]} />;
+                    return <LinkHandler layout={props.layout} type={`${Object.keys(link)[0]}`} key={link[`${Object.keys(link)}`]} handlerLink={link[`${Object.keys(link)}`]} />;
                 })}
             </div>
         </div>
