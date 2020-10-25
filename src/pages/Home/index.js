@@ -7,9 +7,14 @@ import { siteData } from '../../data/siteData';
 const Home = props => {
     const [events, setEvents] = useState([]);
     const [page, setPage] = useState(1);
+    const [dataOver, setDataOver] = useState(false);
+
     useEffect(() => {
         Axios.get(`https://api.github.com/users/${siteData.githubUsername}/events?per_page=10&page=${page}`).then(res => {
             setEvents([...events, ...res.data]);
+            if (res.data.length === 0) {
+                setDataOver(true);
+            }
         }).catch(err => {
             console.log(err);
         });
