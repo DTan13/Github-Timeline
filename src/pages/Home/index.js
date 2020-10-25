@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Layout from '../../components/layout';
 import Axios from 'axios';
 import Event from './Event';
+import ReactVisibilitySensor from "react-visibility-sensor";
 
 import { siteData } from '../../data/siteData';
+import { FaSpinner } from 'react-icons/fa';
+
 const Home = props => {
     const [events, setEvents] = useState([]);
     const [page, setPage] = useState(1);
@@ -31,6 +34,9 @@ const Home = props => {
                             </div>
                         );
                     })}
+                    <ReactVisibilitySensor onChange={() => { setPage(page + 1); }}>
+                        <div className='event-load'>{dataOver ? 'Events are over' : <FaSpinner className='fa-spin' />}</div>
+                    </ReactVisibilitySensor>
                 </div>
             </div>
         </Layout>
