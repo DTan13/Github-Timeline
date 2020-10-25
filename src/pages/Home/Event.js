@@ -104,6 +104,9 @@ const Event = props => {
                     {(new Date(Date.parse(props.event.created_at))).toUTCString()}
                 </div>
             </div>
+            <div className='event-reveal-icon'>
+                <FaArrowRight />
+            </div>
         </div>
     );
 };
