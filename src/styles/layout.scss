@@ -11,7 +11,7 @@
     position: fixed;
     width: 100%;
     z-index: 2;
-    background-color: $theme-color-primary;
+    background-color: $theme-color-back;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -50,7 +50,7 @@
     }
   }
   .footer-wrapper {
-    background-color: $theme-color-primary;
+    background-color: $theme-color-back;
     z-index: 2;
     position: fixed;
     left: 0;
@@ -126,6 +126,18 @@
     .footer-wrapper {
       width: 100%;
       left: 0;
+    }
+  }
+}
+@media (max-width: 420px) {
+  .layout-wrapper {
+    .header-wrapper {
+      .header-pages {
+        .header-page-single {
+          padding-left: 2px;
+          padding-right: 2px;
+        }
+      }
     }
   }
 }
