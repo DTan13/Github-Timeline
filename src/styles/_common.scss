@@ -1,14 +1,16 @@
 * {
   margin: 0;
   padding: 0;
-  text-align: center;
+  // text-align: center;
   vertical-align: middle;
 }
 
-$theme-color-primary: white;
-$theme-color-sec: rgb(201, 21, 21);
+$theme-color-primary: white; //164D4E
+$theme-color-sec: rgb(201, 21, 21); //2D68FA
 $text-color: black;
 $theme-color-back: rgb(209, 234, 235);
+$header-height: 60px;
+$footer-height: 36px;
 
 .fa-spin {
   animation: fa-spin 2s infinite linear;
