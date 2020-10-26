@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import './App.css';
 import './Styles';
@@ -14,6 +14,7 @@ function App() {
         {/* <ComingSoon /> */}
         <Switch>
           <Route path='/' component={Home} />
+          <Redirect to='/' />
         </Switch>
       </div>
     </BrowserRouter>
