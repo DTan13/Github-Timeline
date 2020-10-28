@@ -6,7 +6,7 @@ const CommitDiff = props => {
     // TODO Cleanup
     // KNOWNISSUE :- diff2html --> Rendering big Files!!!!
     useEffect(() => {
-        document.getElementById('commit-diff').innerHTML = html(props.diff, { drawFileList: true, matching: 'lines', diffStyle: "char", outputFormat: 'line-by-line' });
+        document.getElementById('commit-diff').innerHTML = html(props.diff, { drawFileList: true, matching: 'lines', diffStyle: "word", outputFormat: 'line-by-line' });
     });
 
     return (
