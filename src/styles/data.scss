@@ -1,0 +1,24 @@
+@import "common";
+
+.data-wrapper {
+  padding-top: $header-height;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  .input-wrapper {
+    padding-top: 25px;
+    display: block;
+    margin: 0 auto;
+    input {
+      width: auto + 100px;
+      display: block;
+      margin: auto;
+      font-size: 22px;
+    }
+    button {
+      display: block;
+      margin: auto;
+      padding: 3px;
+    }
+  }
+}
