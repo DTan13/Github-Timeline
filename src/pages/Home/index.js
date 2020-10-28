@@ -17,7 +17,17 @@ const Home = props => {
     const separateDetails = window.innerWidth < 800;
 
     useEffect(() => {
-        Axios.get(`https://api.github.com/users/${siteData.githubUsername}/events?per_page=10&page=${page}`).then(res => {
+        Axios.get(`https://api.github.com/users/${props.user}`).then(res => {
+            setIsUser(true);
+        }).catch(err => {
+            setIsUser(false);
+            console.log(err);
+        });
+    }, [props.user]);
+
+    useEffect(() => {
+        Axios.get(`https://api.github.com/users/${props.user || siteData.githubUsername}/events?per_page=20&page=${page}`).then(res => {
+            console.log(page);
             setEvents([...events, ...res.data]);
             if (res.data.length === 0) {
                 setDataOver(true);
