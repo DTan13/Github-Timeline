@@ -6,19 +6,40 @@ import './Styles';
 
 import ComingSoon from './components/comingSoon';
 import Home from './pages/Home';
+import Data from './pages/Data';
+import Projects from './pages/Projects';
+import Layout from './components/layout';
 
-function App() {
-  return (
-    <BrowserRouter>
-      <div className="App">
-        {/* <ComingSoon /> */}
-        <Switch>
-          <Route path='/' component={Home} />
-          <Redirect to='/' />
-        </Switch>
-      </div>
-    </BrowserRouter>
-  );
+class App extends React.Component {
+  state = {
+    user: ''
+  };
+
+  setUser = val => {
+    this.setState({
+      user: val
+    }
+    );
+  };
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          {/* <ComingSoon /> */}
+          <Layout user={this.state.user}>
+            <Switch>
+              <Route exact path='/home' render={() => <Home user={this.state.user} />} />
+              <Route exact path='/projects' render={() => <Projects user={this.state.user} />} />
+              <Route path='/:id' render={() => <Data user={this.state.user} setUser={(val) => { this.setUser(val); }} />} />
+              <Route path='/' render={() => <Data user={this.state.user} setUser={(val) => { this.setUser(val); }} />} />
+              <Redirect to='/' />
+            </Switch>
+          </Layout>
+        </div>
+      </BrowserRouter>
+    );
+  };
 }
 
 export default App;
