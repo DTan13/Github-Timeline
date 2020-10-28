@@ -47,7 +47,7 @@ const EventSpecificDetails = props => {
             {/* TODO Test for everything below */}
             {props.event.type === eventList.issueComment && <GoTo link={props.event.payload.comment.html_url} name="Comment for Issue" />}
             {props.event.type === eventList.commitComment && <GoTo link={props.event.payload.comment.html_url} name="Comment for Commit" />}
-            {props.event.type === eventList.prReview && <GoTo link={props.event.payload.comment.html_url} name="Comment for Review" />}
+            {props.event.type === eventList.prReview && <GoTo link={props.event.payload.review.html_url} name="Comment for Review" />}
             {/* and above this */}
             {props.event.type === eventList.push && diff && <CommitDiff diff={diff} />}
             {props.event.then === eventList.pullreq}
