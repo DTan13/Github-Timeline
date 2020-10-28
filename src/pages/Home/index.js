@@ -3,7 +3,6 @@ import Axios from 'axios';
 import Event from './Event';
 import ReactVisibilitySensor from "react-visibility-sensor";
 
-import Layout from '../../components/layout';
 import { siteData } from '../../data/siteData';
 import { FaSpinner } from 'react-icons/fa';
 import EventDetails from './EventDetails';
@@ -14,6 +13,7 @@ const Home = props => {
     const [dataOver, setDataOver] = useState(false);
     const [selectedId, setSelectedID] = useState(null);
     const [showDetails, setShowDetails] = useState(false);
+    const [isUser, setIsUser] = useState(false);
     const separateDetails = window.innerWidth < 800;
 
     useEffect(() => {
@@ -38,44 +38,42 @@ const Home = props => {
     }, [page]);
 
     return (
-        <Layout>
-            <div className="home-page-wrapper">
-                {!separateDetails && [<div className="event-list-wrapper">
-                    <div className="event-list">
-                        {events.map(event => {
-                            return (
-                                <div key={event.id}>
-                                    <Event onClick={() => { setShowDetails(true); setSelectedID(event.id); }} event={event} />
-                                </div>
-                            );
-                        })}
-                    </div>
-                    <ReactVisibilitySensor onChange={() => { setPage(page + 1); }}>
-                        <div className='event-load'>{dataOver ? 'No More Activity!' : <FaSpinner className='fa-spin' />}</div>
-                    </ReactVisibilitySensor>
-                </div>,
+        <div className="home-page-wrapper">
+            {separateDetails && (!showDetails ? <div className="event-list-wrapper">
+                <div className="event-list">
+                    {events.map(event => {
+                        return (
+                            <div key={event.id}>
+                                <Event onClick={() => { setShowDetails(true); setSelectedID(event.id); }} event={event} />
+                            </div>
+                        );
+                    })}
+                </div>
+                <ReactVisibilitySensor onChange={() => { dataOver || setPage(page + 1); }}>
+                    <div className='event-load'>{isUser ? (dataOver ? 'No More Activity!' : <FaSpinner className='fa-spin' />) : 'Wrong Username'}</div>
+                </ReactVisibilitySensor>
+            </div> :
                 selectedId && showDetails && <div className="event-details-wrapper">
                     <EventDetails hideDetails={() => { setShowDetails(false); }} id={selectedId} event={events.filter(event => event.id === selectedId)} />
-                </div>]}
-                {separateDetails && (!showDetails ? <div className="event-list-wrapper">
-                    <div className="event-list">
-                        {events.map(event => {
-                            return (
-                                <div key={event.id}>
-                                    <Event onClick={() => { setShowDetails(true); setSelectedID(event.id); }} event={event} />
-                                </div>
-                            );
-                        })}
-                    </div>
-                    <ReactVisibilitySensor onChange={() => { setPage(page + 1); }}>
-                        <div className='event-load'>{dataOver ? 'No More Activity!' : <FaSpinner className='fa-spin' />}</div>
-                    </ReactVisibilitySensor>
-                </div> :
-                    selectedId && showDetails && <div className="event-details-wrapper">
-                        <EventDetails hideDetails={() => { setShowDetails(false); }} id={selectedId} event={events.filter(event => event.id === selectedId)} />
-                    </div>)}
-            </div>
-        </Layout>
+                </div>)}
+            {!separateDetails && [<div className="event-list-wrapper">
+                <div className="event-list">
+                    {events.map(event => {
+                        return (
+                            <div key={event.id}>
+                                <Event onClick={() => { setShowDetails(true); setSelectedID(event.id); }} event={event} />
+                            </div>
+                        );
+                    })}
+                </div>
+                <ReactVisibilitySensor onChange={() => { dataOver || setPage(page + 1); }}>
+                    <div className='event-load'>{isUser ? (dataOver ? 'No More Activity!' : <FaSpinner className='fa-spin' />) : 'Wrong Username'}</div>
+                </ReactVisibilitySensor>
+            </div>,
+            selectedId && showDetails && <div className="event-details-wrapper">
+                <EventDetails hideDetails={() => { setShowDetails(false); }} id={selectedId} event={events.filter(event => event.id === selectedId)} />
+            </div>]}
+        </div>
     );
 };
 
