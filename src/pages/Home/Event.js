@@ -2,25 +2,7 @@ import React from 'react';
 import { FaArrowRight, FaWikipediaW } from 'react-icons/fa';
 import { GoCommentDiscussion, GoEye, GoGitPullRequest, GoIssueOpened, GoPackage, GoRepo, GoRepoClone, GoRepoPush, GoSync } from "react-icons/go";
 import { AiOutlineDelete, AiOutlineUser } from "react-icons/ai";
-
-const eventList = {
-    create: 'CreateEvent',
-    commitComment: 'CommitCommentEvent',
-    delete: 'DeleteEvent',
-    fork: 'ForkEvent',
-    wiki: 'GollumEvent',
-    issueComment: 'IssueCommentEvent',
-    issues: 'IssuesEvent',
-    member: 'MemberEvent',
-    public: 'PublicEvent',
-    pullreq: 'PullRequestEvent',
-    reviewComment: 'PullRequestReviewCommentEvent',
-    push: 'PushEvent',
-    release: 'ReleaseEvent',
-    sponsor: 'SponsorshipEvent',
-    watch: 'WatchEvent',
-    prReview: 'PullRequestReviewEvent'
-};
+import { eventList } from '../../data/siteData';
 
 const Event = props => {
     const getEventIcon = gitEvent => {
@@ -89,7 +71,7 @@ const Event = props => {
     };
 
     return (
-        <div className="event-wrapper">
+        <div className="event-wrapper" onClick={props.onClick}>
             <div className="event-icon">
                 {getEventIcon(props.event.type)}
             </div>
