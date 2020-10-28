@@ -1,0 +1,89 @@
+@import "common";
+
+.projects-wrapper {
+  display: block;
+  padding-top: 100px;
+  h2 {
+    text-align: center;
+  }
+  .projects {
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: $footer-height;
+    .repo-details {
+      overflow: hidden;
+      border: 2px solid gray;
+      border-radius: 8px;
+      padding: 4px;
+      width: 30%;
+      margin: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 4px 4px gray;
+      transition: all linear 0.2s;
+      background-color: $theme-color-back;
+      .repo-details-top {
+        display: flex;
+        justify-content: space-between;
+        margin: 4px 0;
+        .repo-name {
+          font-size: 16px;
+          p {
+            font-size: 14px;
+          }
+        }
+        .repo-created {
+          font-size: 12px;
+        }
+      }
+      .repo-details-mid {
+        padding: 3px;
+        font-size: 15px;
+      }
+      .repo-details-bottom {
+        font-size: 12px;
+        padding-top: 6px;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      &:hover {
+        cursor: pointer;
+        box-shadow: 6px 6px gray;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-wrapper {
+    .projects {
+      .repo-details {
+        width: 40%;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .projects-wrapper {
+    .projects {
+      .repo-details {
+        width: 43%;
+        margin: 6px 2px;
+        .repo-details-top {
+          .repo-name {
+            display: block;
+          }
+          .repo-created {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
