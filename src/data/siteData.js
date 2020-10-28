@@ -15,3 +15,22 @@ export const siteData = {
         { Back: "https://github.com/DTan13/DTan13.github.io.api.git" }
     ]
 };
+
+export const eventList = {
+    create: 'CreateEvent',
+    commitComment: 'CommitCommentEvent',
+    delete: 'DeleteEvent',
+    fork: 'ForkEvent',
+    wiki: 'GollumEvent',
+    issueComment: 'IssueCommentEvent',
+    issues: 'IssuesEvent',
+    member: 'MemberEvent',
+    public: 'PublicEvent',
+    pullreq: 'PullRequestEvent',
+    reviewComment: 'PullRequestReviewCommentEvent',
+    push: 'PushEvent',
+    release: 'ReleaseEvent',
+    sponsor: 'SponsorshipEvent',
+    watch: 'WatchEvent',
+    prReview: 'PullRequestReviewEvent'
+};
