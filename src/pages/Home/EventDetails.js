@@ -35,6 +35,7 @@ const EventDetails = props => {
             <EventSpecificDetails event={props.event[0]} />
             <div className="content-wrapper">
                 <h3>Contents</h3>
+                <hr />
                 <Contents repo={props.event[0].repo.url} />
             </div>
             <div className="other-details">

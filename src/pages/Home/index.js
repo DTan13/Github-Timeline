@@ -50,7 +50,7 @@ const Home = props => {
                     })}
                 </div>
                 <ReactVisibilitySensor onChange={() => { dataOver || setPage(page + 1); }}>
-                    <div className='event-load'>{isUser ? (dataOver ? 'No More Activity!' : <FaSpinner className='fa-spin' />) : 'Wrong Username'}</div>
+                    <div className='event-load'>{(props.user && !isUser) ? 'Wrong Username' : (dataOver ? 'No More Activity!' : <FaSpinner className='fa-spin' />)}</div>
                 </ReactVisibilitySensor>
             </div> :
                 selectedId && showDetails && <div className="event-details-wrapper">
@@ -67,7 +67,7 @@ const Home = props => {
                     })}
                 </div>
                 <ReactVisibilitySensor onChange={() => { dataOver || setPage(page + 1); }}>
-                    <div className='event-load'>{isUser ? (dataOver ? 'No More Activity!' : <FaSpinner className='fa-spin' />) : 'Wrong Username'}</div>
+                    <div className='event-load'>{(props.user && !isUser) ? 'Wrong Username' : (dataOver ? 'No More Activity!' : <FaSpinner className='fa-spin' />)}</div>
                 </ReactVisibilitySensor>
             </div>,
             selectedId && showDetails && <div className="event-details-wrapper">
