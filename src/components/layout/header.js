@@ -20,7 +20,9 @@ const Header = props => {
     return (
         <div className="header-wrapper">
             <div className="header-name">
-                <h3 title={siteData.name}>{siteData.githubUsername}<span className='header-name-full'>{siteData.name}</span></h3>
+                <a href={`https://github.com/${props.user || siteData.githubUsername}`}>
+                    <h3 title={props.user || siteData.githubUsername}>{props.user || siteData.githubUsername}</h3>
+                </a>
             </div>
             <div className="header-pages">
                 {props.pages.map((page, index) => {
