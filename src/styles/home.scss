@@ -1,16 +1,19 @@
 @import "common";
 
 .home-page-wrapper {
-  padding: 60px 30px;
+  padding: 55px 10px;
   display: flex;
   flex-wrap: wrap;
+  height: 91%;
   justify-content: space-between;
-  background-color: rgba($color: $theme-color-back, $alpha: 0.5);
   .event-list-wrapper {
-    position: relative;
-    top: 0;
+    position: absolute;
+    top: $header-height - 4px;
     left: 0;
     width: 25%;
+    height: 91%;
+    overflow-y: scroll;
+    text-align: center;
 
     .event-wrapper {
       display: flex;
@@ -49,7 +52,7 @@
 
       &:hover {
         background: rgba($color: $theme-color-sec, $alpha: 0.2);
-        transform: scale(1.15);
+        transform: scale(0.98);
         box-shadow: 2px 2px 2px 2px gray;
         z-index: 4;
         .event-reveal-icon {
@@ -69,6 +72,176 @@
       padding: 5px;
       background-color: $theme-color-sec;
       border-radius: 10px;
+      margin-bottom: 11%;
+    }
+  }
+  .event-details-wrapper {
+    position: absolute;
+    top: $header-height;
+    left: 25%;
+    height: 91%;
+    width: 75%;
+    overflow-y: scroll;
+    .event-details {
+      padding: 1%;
+      padding-bottom: 4%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 90%;
+      .common-details {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+        background-color: $theme-color-back;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        .common-details-info {
+          padding: 4px;
+          height: 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+        .common-details-avatar {
+          img {
+            height: 128px;
+          }
+        }
+      }
+      .content-wrapper {
+        border: 2px groove black;
+        border-radius: 10px;
+        display: block;
+        padding: 20px 0;
+        width: 95%;
+        margin: 10px auto;
+        max-height: 300px;
+        min-height: 50px;
+        overflow-y: scroll;
+        h3 {
+          width: 10%;
+          padding: 0 0 0 40%;
+        }
+        details {
+          summary {
+            cursor: pointer;
+            width: max-content;
+            border: none;
+            outline: none;
+          }
+          p {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+        .content-list {
+          width: 95%;
+          position: relative;
+          top: 0;
+          left: 10px;
+          text-align: left;
+          font-size: 15px;
+          p {
+            width: 100%;
+            padding-top: 5px;
+            position: relative;
+            top: 0;
+            left: 10px;
+            list-style: none;
+            li {
+              position: relative;
+              left: 10px;
+            }
+          }
+        }
+      }
+      .event-specific-details {
+        .commit-diff {
+          display: block;
+          width: 5%;
+          margin: 50px auto;
+        }
+        .external-link {
+          width: 100%;
+          padding: 20px 40%;
+          a {
+            width: 20%;
+          }
+        }
+      }
+      .other-details {
+        margin: 30px 0;
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+        .repo-details {
+          background-color: $theme-color-back;
+          display: block;
+          // position: fixed;
+          bottom: $footer-height;
+          // float: left;
+          height: 120px;
+          border-radius: 20px;
+          width: 48%;
+          .repo-details-general {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            .repo-details-general-info {
+              text-align: left;
+              .repo-details-name {
+                a {
+                  text-align: left;
+                }
+              }
+              .repo-details-owner {
+                a {
+                  text-align: left;
+                }
+              }
+            }
+            .repo-details-extra {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+            }
+          }
+        }
+        .repo-lang-data {
+          overflow: hidden;
+          background-color: $theme-color-back;
+          border-radius: 20px;
+          height: 120px;
+          width: 48%;
+          .repo-lang-statistics {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            div {
+              padding: 0 20px;
+            }
+          }
+        }
+      }
+      .hide-details {
+        position: fixed;
+        background: rgba($color: $theme-color-sec, $alpha: 0.4);
+        top: 10%;
+        height: 30px;
+        width: 30px;
+        right: 6%;
+        font-size: 24px;
+        outline: none;
+        border: 0;
+        border-radius: 50%;
+        padding: 2px;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -76,17 +249,58 @@
 @media (max-width: 800px) {
   .home-page-wrapper {
     .event-list-wrapper {
-      width: 85%;
+      width: 100%;
       margin: 0 auto;
+      padding-bottom: 60px;
+      top: 48px;
+    }
+    .event-details-wrapper {
+      display: block;
+      position: absolute;
+      top: $header-height;
+      left: 0;
+      width: 100%;
+      .event-details {
+        padding: 2%;
+        .event-specific-details {
+          .external-link {
+            padding: 20px 0;
+            a {
+              display: block;
+              margin: 0 auto;
+            }
+          }
+        }
+        .other-details {
+          font-size: 24px;
+          flex-direction: column;
+          width: 100%;
+          .repo-details {
+            width: 98%;
+            height: fit-content;
+            font-size: 24px;
+            padding: 1%;
+          }
+          .repo-lang-data {
+            margin-top: 10px;
+            width: 100%;
+            height: fit-content;
+            min-height: 60px;
+            justify-content: space-between;
+          }
+        }
+      }
     }
   }
 }
 
 @media (max-width: 600px) {
   .home-page-wrapper {
+    padding: 10px 10px;
     .event-list-wrapper {
-      width: 95%;
-      margin: 0 auto;
+      width: 80%;
+      padding: 0 0;
+      margin: 4px 10%;
     }
   }
 }
