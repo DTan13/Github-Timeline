@@ -11,6 +11,7 @@ import Projects from './pages/Projects';
 import Layout from './components/layout';
 
 class App extends React.Component {
+
   state = {
     user: ''
   };
@@ -21,6 +22,7 @@ class App extends React.Component {
     }
     );
   };
+  // TODO Global Axios Configuration
 
   render() {
     return (
