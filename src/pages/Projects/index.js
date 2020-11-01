@@ -7,7 +7,11 @@ const Projects = props => {
     const [repoList, setRepoList] = useState([]);
 
     useEffect(() => {
-        Axios.get(`https://api.github.com/users/${props.user || siteData.githubUsername}/repos`).then(res => {
+        Axios.get(`https://api.github.com/users/${props.user || siteData.githubUsername}/repos`, {
+            headers: {
+                'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
+            }
+        }).then(res => {
             setRepoList(res.data);
         }).catch(err => {
             console.log(err);

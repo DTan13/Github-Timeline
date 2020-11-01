@@ -8,7 +8,11 @@ const RepoDetails = props => {
 
     useEffect(() => {
         if (props.repo.fork) {
-            Axios.get(props.repo.url).then(res => {
+            Axios.get(props.repo.url, {
+                headers: {
+                    'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
+                }
+            }).then(res => {
                 setForkedRepo(res.data);
             }).catch(err => {
                 console.log(err);

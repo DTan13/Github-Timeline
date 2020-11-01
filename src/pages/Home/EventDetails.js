@@ -11,7 +11,11 @@ const EventDetails = props => {
     const [languageData, setLanguageData] = useState();
 
     useEffect(() => {
-        Axios.get(`${props.event[0].repo.url}`).then(res => {
+        Axios.get(`${props.event[0].repo.url}`, {
+            headers: {
+                'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
+            }
+        }).then(res => {
             setRepodata(res.data);
         }).catch(err => {
             console.log(err);
@@ -20,7 +24,11 @@ const EventDetails = props => {
 
     useEffect(() => {
         if (repodata) {
-            Axios.get(`${repodata.languages_url}`).then(res => {
+            Axios.get(`${repodata.languages_url}`, {
+                headers: {
+                    'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
+                }
+            }).then(res => {
                 setLanguageData(res.data);
             }).catch(err => {
                 console.log(err);

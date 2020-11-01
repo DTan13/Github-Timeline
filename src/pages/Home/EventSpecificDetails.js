@@ -13,7 +13,8 @@ const EventSpecificDetails = props => {
             Axios.get(`${props.event.repo.url}/compare/${props.event.payload.before}...${props.event.payload.head}`,
                 {
                     headers: {
-                        "Accept": "application/vnd.github.v3.raw.diff"
+                        "Accept": "application/vnd.github.v3.raw.diff",
+                        'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
                     }
                 }).then(res => {
                     setDiff(res.data);
@@ -22,7 +23,8 @@ const EventSpecificDetails = props => {
         else if (props.event.type === eventList.pullreq) {
             Axios.get(`${props.event.repo.url}/compare/${props.event.payload.pull_request.base.sha}...${props.event.payload.pull_request.head.sha}`, {
                 headers: {
-                    "Accept": "application/vnd.github.v3.raw.diff"
+                    "Accept": "application/vnd.github.v3.raw.diff",
+                    'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
                 }
             }).then(res => {
                 setDiff(res.data);

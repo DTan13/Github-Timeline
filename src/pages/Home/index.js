@@ -17,7 +17,11 @@ const Home = props => {
     const separateDetails = window.innerWidth < 800;
 
     useEffect(() => {
-        Axios.get(`https://api.github.com/users/${props.user}`).then(res => {
+        Axios.get(`https://api.github.com/users/${props.user}`, {
+            headers: {
+                'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
+            }
+        }).then(res => {
             setIsUser(true);
         }).catch(err => {
             setIsUser(false);
@@ -26,8 +30,12 @@ const Home = props => {
     }, [props.user]);
 
     useEffect(() => {
-        Axios.get(`https://api.github.com/users/${props.user || siteData.githubUsername}/events?per_page=20&page=${page}`).then(res => {
-            console.log(page);
+        Axios.get(`https://api.github.com/users/${props.user || siteData.githubUsername}/events?per_page=20&page=${page}`, {
+            headers: {
+                'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
+            }
+        }
+        ).then(res => {
             setEvents([...events, ...res.data]);
             if (res.data.length === 0) {
                 setDataOver(true);
@@ -44,7 +52,7 @@ const Home = props => {
                     {events.map(event => {
                         return (
                             <div key={event.id}>
-                                <Event onClick={() => { setShowDetails(true); setSelectedID(event.id); }} event={event} />
+                                <Event key={event.id} onClick={() => { setShowDetails(true); setSelectedID(event.id); }} event={event} />
                             </div>
                         );
                     })}
