@@ -7,13 +7,21 @@ const Contents = props => {
 
     useEffect(() => {
         if (props.repo) {
-            Axios.get(`${props.repo}/contents`).then(res => {
+            Axios.get(`${props.repo}/contents`, {
+                headers: {
+                    'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
+                }
+            }).then(res => {
                 setRepoContents(res.data);
             }).catch(err => {
                 console.log(err);
             });
         } else {
-            Axios.get(props.url).then(res => {
+            Axios.get(props.url, {
+                headers: {
+                    'Authorization': `token ${process.env.REACT_APP_GITHUB_API_KEY}`
+                }
+            }).then(res => {
                 setRepoContents(res.data);
             }).catch(err => {
                 console.log(err);
@@ -25,7 +33,7 @@ const Contents = props => {
         <details className='content-list'>
             {props.repo !== undefined && <summary>Files :     Click to expand </summary>}
             {props.summary && <summary>{`${props.summary}`}</summary>}
-            {repoContents && repoContents.map(content => <Content content={content} />)}
+            {repoContents && repoContents.map(content => <Content key={content.id} content={content} />)}
         </details>
     );
 };
