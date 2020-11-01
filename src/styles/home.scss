@@ -250,7 +250,6 @@
   .home-page-wrapper {
     .event-list-wrapper {
       width: 100%;
-      margin: 0 auto;
       padding-bottom: 60px;
       top: 48px;
     }
@@ -296,11 +295,8 @@
 
 @media (max-width: 600px) {
   .home-page-wrapper {
-    padding: 10px 10px;
     .event-list-wrapper {
-      width: 80%;
-      padding: 0 0;
-      margin: 4px 10%;
+      width: 100%;
     }
   }
 }

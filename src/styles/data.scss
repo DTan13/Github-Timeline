@@ -15,10 +15,17 @@
       margin: auto;
       font-size: 22px;
     }
-    button {
-      display: block;
-      margin: auto;
-      padding: 3px;
+    div {
+      padding: 0 16%;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      button {
+        align-self: center;
+        padding: 10px;
+        background: azure;
+        border-radius: 6px;
+      }
     }
   }
 }
