@@ -21,13 +21,13 @@ const RepoDetails = props => {
     }, [props.repo.fork, props.repo.url]);
 
     return (
-        <div className="repo-details">
+        <div className="repo-details" onClick={props.selectRepo}>
             <div className="repo-details-top">
                 <div className="repo-name">
                     <a href={props.repo.html_url}>
                         <GoRepo />{props.repo.name}
                     </a>
-                    <hr />
+                    {props.repo.fork && <hr />}
                     {props.repo.fork === true && forkedRepo && <p><GoRepoForked /> <a href={forkedRepo.parent.html_url}>{forkedRepo.parent.full_name}</a></p>}
                 </div>
                 <div className="repo-created">
@@ -40,16 +40,16 @@ const RepoDetails = props => {
             </div>
             <div className="repo-details-bottom">
                 <div className="repo-stars">
-                    <GoStar />{(forkedRepo && forkedRepo.parent.stargazers_count) || props.repo.stargazers_count}
+                    {props.stats ? <a href={`${props.repo.html_url}/stargazers`}><GoStar />&nbsp;{(forkedRepo && forkedRepo.parent.stargazers_count) || props.repo.stargazers_count}</a> : <span><GoStar />{(forkedRepo && forkedRepo.parent.stargazers_count) || props.repo.stargazers_count}</span>}
                 </div>
                 <div className="repo-watchers">
-                    <GoEye />{(forkedRepo && forkedRepo.parent.watchers_count) || props.repo.watchers_count}
+                    {props.stats ? <a href={`${props.repo.html_url}/watchers`}><GoEye />&nbsp;{(forkedRepo && forkedRepo.parent.watchers_count) || props.repo.watchers_count}</a> : <span><GoEye />{(forkedRepo && forkedRepo.parent.watchers_count) || props.repo.watchers_count}</span>}
                 </div>
                 <div className="repo-forks">
-                    <GoRepoForked /> {(forkedRepo && forkedRepo.parent.forks_count) || props.repo.forks_count}
+                    {props.stats ? <a href={`${props.repo.html_url}/network/members`}><GoRepoForked />&nbsp; {(forkedRepo && forkedRepo.parent.forks_count) || props.repo.forks_count}</a> : <span><GoRepoForked /> {(forkedRepo && forkedRepo.parent.forks_count) || props.repo.forks_count}</span>}
                 </div>
                 <div className="repo-issues">
-                    <GoIssueOpened />{(forkedRepo && forkedRepo.parent.open_issues) || props.repo.open_issues}
+                    {props.stats ? <a href={`${props.repo.html_url}/issues`}><GoIssueOpened />&nbsp;{(forkedRepo && forkedRepo.parent.open_issues) || props.repo.open_issues}</a> : <span><GoIssueOpened />{(forkedRepo && forkedRepo.parent.open_issues) || props.repo.open_issues}</span>}
                 </div>
             </div>
         </div>
