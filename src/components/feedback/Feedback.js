@@ -12,7 +12,7 @@ const Feedback = props => {
             return;
         }
 
-        Axios.post(process.env.REACT_APP_FEEDBACK_URL,
+        Axios.post(`${process.env.REACT_APP_FEEDBACK_URL}/feedback`,
             {
                 "name": name,
                 "email": mail,
