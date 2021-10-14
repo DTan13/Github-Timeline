@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+.data-wrapper {
+  padding-top: 60px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.data-wrapper .input-wrapper {
+  padding-top: 25px;
+  display: block;
+  margin: 0 auto;
+}
+.data-wrapper .input-wrapper input {
+  width: auto100px;
+  display: block;
+  margin: auto;
+  font-size: 22px;
+}
+.data-wrapper .input-wrapper div {
+  padding: 0 16%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.data-wrapper .input-wrapper div button {
+  align-self: center;
+  padding: 10px;
+  background: azure;
+  border-radius: 6px;
+}

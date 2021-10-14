@@ -50,7 +50,6 @@ const EventDetails = props => {
                 {repodata && <RepoDetails repodata={repodata} />}
                 {languageData && <RepoLanguageData languageData={languageData} />}
             </div>
-
         </div>
     );
 };

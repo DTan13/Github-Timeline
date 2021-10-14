@@ -1,4 +1,28 @@
-@import "common";
+* {
+  margin: 0;
+  padding: 0;
+  // text-align: center;
+  vertical-align: middle;
+}
+
+$theme-color-primary: white; //164D4E
+$theme-color-sec: rgb(201, 21, 21); //2D68FA
+$text-color: black;
+$theme-color-back: rgb(209, 234, 235);
+$header-height: 60px;
+$footer-height: 36px;
+
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
 
 .data-wrapper {
   padding-top: $header-height;

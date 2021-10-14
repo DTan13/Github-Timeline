@@ -72,19 +72,16 @@ const Event = props => {
 
     return (
         <div className="event-wrapper" onClick={props.onClick}>
-            <div className="event-icon">
-                {getEventIcon(props.event.type)}
-            </div>
             <div className="event-content">
                 <div className="event-content-title">
-                    {getEventDesc(props.event.type)}
+                    <span className="event-icon">{getEventIcon(props.event.type)}</span>{getEventDesc(props.event.type)}
                 </div>
                 <div className="event-content-repo">
                     {props.event.repo.name}
                 </div>
-                <div className="event-content-time">
+                {/* <div className="event-content-time">
                     {(new Date(Date.parse(props.event.created_at))).toUTCString()}
-                </div>
+                </div> */}
             </div>
             <div className='event-reveal-icon'>
                 <FaArrowRight />

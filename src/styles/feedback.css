@@ -1,17 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  // text-align: center;
   vertical-align: middle;
 }
-
-$theme-color-primary: white; //164D4E
-$theme-color-sec: rgb(201, 21, 21); //2D68FA
-$text-color: black;
-$theme-color-back: rgb(209, 234, 235);
-$header-height: 60px;
-$footer-height: 36px;
-
 .fa-spin {
   animation: fa-spin 2s infinite linear;
 }
@@ -23,7 +14,6 @@ $footer-height: 36px;
     transform: rotate(359deg);
   }
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -69,53 +59,44 @@ $footer-height: 36px;
   background: azure;
   border-radius: 6px;
 }
-@import "common";
-
 .feedback-wrapper {
   display: block;
   margin: 40px auto 0 auto;
   text-align: center;
-  padding-bottom: $footer-height;
-  .feedback-component {
-    display: block;
-    margin: 10px auto;
-    padding-top: 50px;
-    font-size: 18px;
-    width: 50%;
-    .feedback {
-      textarea {
-        padding: 4px;
-        resize: none;
-        width: 80%;
-        height: 100px;
-      }
-    }
-    .feedback-bottom {
-      justify-content: space-evenly;
-      display: flex;
-      input {
-        padding: 2px;
-      }
-    }
-    button {
-      cursor: pointer;
-      padding: 8px;
-      background-color: azure;
-      border-radius: 6px;
-    }
-  }
+  padding-bottom: 36px;
 }
-
+.feedback-wrapper .feedback-component {
+  display: block;
+  margin: 10px auto;
+  padding-top: 50px;
+  font-size: 18px;
+  width: 50%;
+}
+.feedback-wrapper .feedback-component .feedback textarea {
+  padding: 4px;
+  resize: none;
+  width: 80%;
+  height: 100px;
+}
+.feedback-wrapper .feedback-component .feedback-bottom {
+  justify-content: space-evenly;
+  display: flex;
+}
+.feedback-wrapper .feedback-component .feedback-bottom input {
+  padding: 2px;
+}
+.feedback-wrapper .feedback-component button {
+  cursor: pointer;
+  padding: 8px;
+  background-color: azure;
+  border-radius: 6px;
+}
 @media (max-width: 700px) {
-  .feedback-wrapper {
-    .feedback-component {
-      .feedback-bottom {
-        flex-direction: column;
-        input {
-          margin-bottom: 10px;
-          margin-top: 4px;
-        }
-      }
-    }
+  .feedback-wrapper .feedback-component .feedback-bottom {
+    flex-direction: column;
+  }
+  .feedback-wrapper .feedback-component .feedback-bottom input {
+    margin-bottom: 10px;
+    margin-top: 4px;
   }
 }

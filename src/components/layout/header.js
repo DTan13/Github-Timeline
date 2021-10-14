@@ -21,7 +21,7 @@ const Header = props => {
         <div className="header-wrapper">
             <div className="header-name">
                 <a href={`https://github.com/${props.user || siteData.githubUsername}`}>
-                    <h3 title={props.user || siteData.githubUsername}>{props.user || siteData.githubUsername}</h3>
+                    <h3 title={props.user || siteData.githubUsername}>github.com/{props.user || siteData.githubUsername}</h3>
                 </a>
             </div>
             <div className="header-pages">

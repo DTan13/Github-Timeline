@@ -1,8 +1,6 @@
-import './styles/_common.scss';
-
-import './styles/social.scss';
-import './styles/layout.scss';
-import './styles/home.scss';
-import './styles/data.scss';
-import './styles/projects.scss';
-import './styles/feedback.scss';
+import './styles/social.css';
+import './styles/layout.css';
+import './styles/home.css';
+import './styles/data.css';
+import './styles/projects.css';
+import './styles/feedback.css';

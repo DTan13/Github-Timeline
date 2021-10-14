@@ -15,7 +15,7 @@ const Layout = props => {
         <div className="layout-wrapper">
             <Header user={props.user} pages={pages} />
             {props.children}
-            <Footer socialMediaLinks={socialMediaLinks} />
+            {/* <Footer socialMediaLinks={socialMediaLinks} /> */}
         </div>
     );
 };

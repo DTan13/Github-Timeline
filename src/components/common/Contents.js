@@ -31,7 +31,7 @@ const Contents = props => {
 
     return (
         <details className='content-list'>
-            {props.repo !== undefined && <summary>Files :     Click to expand </summary>}
+            {props.repo !== undefined && <summary>Files : Click to expand </summary>}
             {props.summary && <summary>{`${props.summary}`}</summary>}
             {repoContents && repoContents.map(content => <Content key={content.id} content={content} />)}
         </details>
